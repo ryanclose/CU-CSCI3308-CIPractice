@@ -145,6 +145,26 @@ START_TEST(test_2d_midpoint)
 }
 END_TEST
 
+START_TEST(coord_2d_area_triangle){
+    a.x = 15;
+    a.y = 15;
+    b.x = 23;
+    b.y = 30;
+    c.x = 50;
+    c.y = 25;
+    ck_assert(coord_2d_area_triangle(&a ,&b, &c) == 222.5);
+
+    a.x = 44;
+    a.y = 15;
+    b.x = 23;
+    b.y = 30;
+    c.x = 50;
+    c.y = 25;
+    ck_assert(coord_2d_area_triangle(&a ,&b, &c) == 150);
+
+}
+END_TEST
+
 /* coord_2d Test Suite */
 Suite* coord_2d_suite(void)
 {
